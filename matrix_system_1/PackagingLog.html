@@ -1,0 +1,56 @@
+<html>  
+<head>
+    <style>     
+        html{     
+        background-color: white;     
+        padding: 5px;     
+        width: 95%;     
+        }     
+        pre {     
+        overflow-x: auto;     
+        white-space: pre-wrap;     
+        white-space: -moz-pre-wrap;     
+        white-space: -pre-wrap;     
+        white-space: -o-pre-wrap;     
+        word-wrap: break-word;     
+        }     
+    </style>     
+    
+    <script type="text/javascript">     
+            
+            function setup(htmlComponent) {     
+            
+				htmlComponent.addEventListener("DataChanged", function(event) {     
+				scrollID =  htmlComponent.Data;     
+					if (scrollID != ''){
+						if(scrollID==="bottom"){         
+							scrollToBottom();     
+						} else if(scrollID==="DOWNLOAD_MCRINSTALLER" || scrollID==="BUILD_MISSING" || scrollID==="SAMPLE_GEN" || scrollID==="USER_REQUESTED_PACKAGE"){     
+							document.getElementById(scrollID).scrollIntoView(true);     
+						} else {     
+							//document.body.innerHTML = document.body.innerHTML + scrollID;     
+							document.body.appendChild(scrollID);                 
+							scrollToBottom();     
+						}    
+						htmlComponent.Data = '';
+					}		
+				});          
+            }     
+            function scrollToBottom(){     
+            var scrollingElement = (document.scrollingElement || document.body);     
+            scrollingElement.scrollTop = scrollingElement.scrollHeight;     
+            }     
+            
+    </script> 
+</head>
+ <body><meta charset="UTF-8">        
+ <pre><font color=blue>mcc -W 'webapp:matrix_system_1,CONFIG:C:\Users\georg\AppData\Local\Temp\tp3fbcf5ae_27f9_4e64_8305_91140cef5917.xml' -d 'C:\Users\georg\OneDrive\Работен плот\Дипломен проект\matrix_system_1' -v -Z autodetect -C 'C:\Users\georg\OneDrive\Работен плот\Дипломен проект\matrix_system.mlapp'</font>
+Compiler version: 8.6 (R2023a)
+Analyzing file dependencies. 
+<font color='orange'>Warning: In "C:\Users\georg\OneDrive\Работен плот\Дипломен проект\matrix_system.mlapp", "syms" are excluded from packaging for the
+MATLAB Runtime environment according to the MATLAB Compiler license. Either remove the file or function from your code, or use the
+MATLAB function "isdeployed" to ensure the function is not invoked in the deployed component.</font> 
+Parsing file "C:\Users\georg\OneDrive\Работен плот\Дипломен проект\matrix_system.mlapp"
+	(referenced from command line).
+
+</pre></body></html>
